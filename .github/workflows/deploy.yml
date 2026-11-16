@@ -22,7 +22,7 @@ jobs:
       - uses: withastro/action@v3
         with:
           path: ./my-portfolio
-          node-version: 20
+          node-version: 24
           package-manager: npm
 
   deploy:
