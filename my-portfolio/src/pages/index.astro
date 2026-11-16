@@ -1,0 +1,122 @@
+---
+import Base from "../layouts/Base.astro";
+const projects = [
+  {
+    name: "Tetrawave",
+    url: "https://github.com/aexko/tetrawave",
+    context: "McHacks 12 · Team of 4",
+    desc: "Gesture-controlled Tetris in Python. Built the game mechanics and assets with PyGame.",
+    tags: ["Python", "Mediapipe", "OpenCV", "PyGame"],
+  },
+  {
+    name: "Home Server",
+    url: "",
+    context: "Personal infrastructure",
+    desc: "Built from scratch: RAID 1 NAS with automated rsync backups, static IP, SSH access, and Dockerized Nextcloud and media servers.",
+    tags: ["Ubuntu Server", "Docker", "RAID", "Samba", "SSH"],
+  },
+];
+
+const experience = [
+  {
+    role: "Full-stack Developer Intern",
+    company: "Intact",
+    dates: "Sept 2025 – Dec 2025",
+    bullets: [],
+  },
+  {
+    role: "Backend Developer Intern",
+    company: "Intact",
+    dates: "Jan 2025 – Apr 2025",
+    bullets: [
+      "Contributed to core PCHA microservices in Java/Spring Boot (450+ GitHub contributions).",
+      "Implemented contract-first development with OpenAPI specifications.",
+      "Built standardized adapters for transaction reader/writer/loader services.",
+      "Wrote unit tests with JUnit and Mockito, and integration tests with Cucumber and Gherkin.",
+      "Fixed 10 critical PrismaCloud vulnerabilities by updating dependencies and security patches.",
+    ],
+  },
+  {
+    role: "Full-stack Developer Intern",
+    company: "Écosystèmes Alimentaires Urbains",
+    dates: "Jan 2023 – Apr 2023",
+    bullets: [
+      "Built an aquaponics research platform from scratch with Django REST API and Vue.js.",
+      "Created data tables with growth calculations using AG Grid.",
+      "Built an analytics dashboard with Chart.js for tracking maturation trends.",
+    ],
+  },
+  {
+    role: "French Tutor",
+    company: "Collège de Bois-de-Boulogne",
+    dates: "Sept 2021 – Dec 2021",
+    bullets: ["Tutored 5 students in French, improving average grades by 50%."],
+  },
+];
+---
+
+<Base title="Alex Kao · Software Engineer">
+  <header>
+    <h1>Alex Kao</h1>
+    <p class="muted">Full-stack & Backend Developer · Montreal, QC</p>
+    <p class="links">
+      <a href="mailto:you@outlook.com">Email</a>
+      <a href="https://linkedin.com/in/aexko">LinkedIn</a>
+      <a href="https://github.com/aexko">GitHub</a>
+      <a href="/resume.pdf">Resume</a>
+    </p>
+  </header>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="head">
+      <h3>Concordia University</h3>
+      <span class="muted">Montreal, QC</span>
+    </div>
+    <p class="muted">B.Sc. Computer Science · 2023 – 2027</p>
+    <p class="muted">
+      Data Structures, Algorithms, OOP, Databases, Operating Systems
+    </p>
+  </div>
+
+  <h2>Experience</h2>
+  {experience.map((e) => (
+    <div class="item">
+      <div class="head">
+        <h3>{e.company}</h3>
+        <span class="muted">{e.dates}</span>
+      </div>
+      <p class="muted">
+        <em>{e.role}</em>
+      </p>
+      {e.bullets.length > 0 && (
+        <ul>
+          {e.bullets.map((b) => (
+            <li>{b}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  ))}
+
+  <h2>Projects</h2>
+  {projects.map((p) => (
+    <div class="item">
+      <div class="head">
+        <h3>{p.url ? <a href={p.url}>{p.name}</a> : p.name}</h3>
+        <span class="muted">{p.context}</span>
+      </div>
+      <p>{p.desc}</p>
+      <p class="muted">{p.tags.join(" · ")}</p>
+    </div>
+  ))}
+
+  <h2>Skills</h2>
+  <p>
+    <strong>Languages:</strong> Java, Python, JavaScript, SQL, C
+  </p>
+  <p>
+    <strong>Frameworks & tools:</strong> Spring Boot, Django, Vue.js, Docker,
+    Git, Postman, Jira, Confluence
+  </p>
+</Base>

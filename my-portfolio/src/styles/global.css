@@ -1,0 +1,90 @@
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --muted: #666;
+  --line: #ddd;
+  --link: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f10;
+    --fg: #eaeaea;
+    --muted: #9a9a9a;
+    --line: #333;
+    --link: #60a5fa;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--fg);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+}
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+p {
+  margin: 0.25rem 0;
+}
+ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+li {
+  margin-bottom: 0.25rem;
+}
+a {
+  color: var(--link);
+  word-break: break-word;
+}
+.muted {
+  color: var(--muted);
+}
+.item {
+  margin-bottom: 1.5rem;
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+}
+.links a {
+  margin-right: 0.75rem;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  body {
+    padding: 1.5rem 1rem;
+  }
+}
